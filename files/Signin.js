@@ -11,7 +11,7 @@ return(
          style={{height:"100%",width:"100%",}} />
 
         <View 
-        style={{height:320,width:257,backgroundColor:"white",position:"absolute",marginLeft:52,marginTop:200}}>
+        style={{height:250,width:257,backgroundColor:"white",position:"absolute",marginLeft:52,marginTop:200}}>
 
             <Image 
             source={require('../images/ll.jpeg')} 

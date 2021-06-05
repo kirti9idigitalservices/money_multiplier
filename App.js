@@ -9,14 +9,14 @@ import Signin from './files/Signin';
 import Mediator from './files/Mediator';
 import RechargeScreen from './files/RechargeScreen';
 import Cf21 from './files/Cf21';
-
+import Home from './files/Home';
 
 const Stack = createStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Signin">
       <Stack.Screen name="PaymentOptions" component={PaymentOptions} />
       <Stack.Screen name="Welcome2" component={Welcome2} />
       <Stack.Screen name="Login" component={Login} />
@@ -24,6 +24,7 @@ function App() {
       <Stack.Screen name="RechargeScreen" component={RechargeScreen} />
       <Stack.Screen name="Mediator" component={Mediator} />
       <Stack.Screen name="cf21" component={Cf21} />
+      <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );

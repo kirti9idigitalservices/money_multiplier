@@ -1,46 +1,53 @@
-import { View,StyleSheet,Text, Button,Image, TouchableOpacity,TextInput} from "react-native";
+import { View,StyleSheet,Text, Button,Image, TouchableOpacity,TextInput, ImageBackground} from "react-native";
 import * as React from 'react';
 
 
 function PaymentOptions({ navigation }) {
     return(
         <View style={styles.container}>
+
             <View style={styles.header}>
-             <Image source={require('../images/ls2.png')} style={styles.image}></Image>
-             <Text style={styles.text}> Recharge</Text>
+            <ImageBackground
+              source={require('../images/payment/1.jpeg')} 
+              style={styles.image}>
+             <Image  source={require('../images/payment/less.png')}
+                   style={{height:20,width:20,left:"8%",marginTop: 10,}}/>
+             <Text style={styles.text}>Payment </Text>
+             <Text style={styles.text1}>Method</Text>
+             </ImageBackground>
              </View>  
 
              <Text style={{left:"6%",fontSize:20,top:10,
-              shadowOffset:{  width: 20,  height: 20,  },
-              shadowColor: 'black',
-              shadowOpacity: 0.5  
-            }}>Cards</Text>  
+             }}>Cards</Text>  
+
+
              <View style={styles.balance}>
-            <Image  source={require('../images/payment/6.jpeg')} style={{height:32,width:32,left:"10%"}}/>
-            <Text style={{fontSize:15,left:22,top:0}}>{'Credit,Debit & ATM Cards '}</Text>
+            <Image  source={require('../images/payment/6.png')} 
+            style={{height:32,width:32,left:"10%",backgroundColor:'white',}}/>
+            <Text style={{fontSize:15,left:22,top:0}}>{'Credit, Debit & ATM Cards '}</Text>
              </View>   
 
               <Text style={{left:"6%",fontSize:20,top:10,
-              shadowOffset:{  width: 20,  height: 20,  },
-              shadowColor: 'black',
-              shadowOpacity: 0.5  
-            }}>UPI</Text> 
+             }}>UPI</Text> 
 
              <View style={styles.balance2}>
                  <View style={styles.inner}>
-                 <Image  source={require('../images/payment/5.jpeg')} style={{height:20,width:20,left:"20%",top:4,borderRadius:50}}/>
-                 <Text style={{fontSize:13,left:25,top:2}}>{'Paytm UPI '}</Text>
+                 <Image  source={require('../images/payment/4.png')}
+                  style={{height:20,width:20,left:"10%",backgroundColor:'white',}}/>
+                 <Text style={{fontSize:15,left:22,top:1}}>{'Paytm UPI '}</Text>
                  </View>
 
                  <View style={styles.inner}>
-                 <Image  source={require('../images/payment/2.jpeg')} style={{height:20,width:20,left:"20%",top:4,borderRadius:50}}/>
-                 <Text style={{fontSize:13,left:25,top:2}}>{'Google  Pay '}</Text>
+                 <Image  source={require('../images/payment/3.png')}
+                   style={{height:20,width:20,left:"10%"}}/>
+                 <Text style={{fontSize:15,left:22,top:1}}>{'Google Pay '}</Text>
                      
                 </View>
 
                 <View style={styles.inner}>
-                <Image  source={require('../images/Welcome/upi.png')} style={{height:20,width:20,left:"20%",top:4,borderRadius:50}}/>
-                 <Text style={{fontSize:13,left:25,top:2}}>{'Pay Via UPI '}</Text>
+                <Image  source={require('../images/payment/5.png')}
+                style={{height:20,width:20,left:"10%"}}/>
+                 <Text style={{fontSize:15,left:22,top:1}}>{'Pay via UPI '}</Text>
                      
                 </View>
                
@@ -51,19 +58,23 @@ function PaymentOptions({ navigation }) {
               shadowColor: 'black',
               shadowOpacity: 0.5  
             }}>Wallets</Text>  
+
+
              <View style={styles.balance3}>
              <View style={styles.inner}>
-                 <Image  source={require('../images/payment/4.jpeg')} style={{height:20,width:20,left:"20%",top:4,borderRadius:50}}/>
-                 <Text style={{fontSize:13,left:25,top:4}}>{'MobiKwik '}</Text>
+                 <Image  source={require('../images/payment/1.png')}
+                  style={{height:20,width:20,left:"20%",top:4,borderRadius:50}}/>
+                 <Text style={{fontSize:15,left:22,top:0}}>{'Mobikwik '}</Text>
                      
                 </View>
 
                 <View style={styles.inner2}>
-                <Image  source={require('../images/payment/3.jpeg')} style={{height:20,width:20,left:"20%",top:4,borderRadius:50}}/>
-                 <Text style={{fontSize:13,left:25,top:4}}>{'Freerecharge '}</Text>
+                <Image  source={require('../images/payment/2.png')} style={{height:20,width:20,left:"20%",top:4,borderRadius:50}}/>
+                 <Text style={{fontSize:15,left:22,top:0}}>{'Freecharge '}</Text>
                      
                 </View>
-             </View>                                 
+             </View>
+                                              
         </View>
     )
 }
@@ -75,35 +86,38 @@ export default PaymentOptions;
 
 const styles=StyleSheet.create({
     container:{
-        height:"100%",
-        backgroundColor:"#EFF2F3"
+       
+        flex:1,
+        
     },
     header:{
         width:"100%",
-        height:"7%",
-        backgroundColor:"#551563",
-        display:"flex",
-        alignItems:"center",
-        justifyContent:"space-between",
-        flexDirection:"row",
-        marginTop:20
-
+        height:"25%",
+        backgroundColor:"red",
+      
    },
    image:{
-       height:30,
-       width:15,
-       color:"white",
-       left:10
+       height:150,
+       width:"100%",
+      
    },
    text:{
        color:"white",
-       fontSize:22,
+       fontSize:30,
        fontWeight:"bold",
-       right:20,
-       shadowOffset:{  width: 20,  height: 20,  },
-       shadowColor: 'black',
-       shadowOpacity: 2.0  
-   },
+       marginTop: 20,
+       marginLeft: 15,
+      },
+
+
+text1:{
+    color:"white",
+    fontSize:30,
+    fontWeight:"bold",
+    marginTop: 0,
+    marginLeft: 15,
+    
+},
    balance:{
     height:"8%",
     width:"90%",
@@ -111,7 +125,6 @@ const styles=StyleSheet.create({
     backgroundColor:"white",
     borderRadius:5,
     marginTop:20,
-    display:"flex",
     flexDirection:"row",
     alignItems:"center"
  },
@@ -132,11 +145,10 @@ const styles=StyleSheet.create({
     marginTop:20
  },
  inner:{
-     height:"30%",
+     height:"35%",
      width:"90%",
      left:"5%",
-     alignItems:"center",
-     display:"flex",
+    // alignItems:"center",
      flexDirection:"row"
  },
  inner2:{
@@ -144,7 +156,7 @@ const styles=StyleSheet.create({
     width:"90%",
     left:"5%",
     alignItems:"center",
-    display:"flex",
+  //  display:"flex",
     flexDirection:"row",
     top:10
 }
